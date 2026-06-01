@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <script>
+!function(){"use strict";var e=[/Creating multiple Statsig clients with the same SDK key/i,/Resource Sentinel noted a failed resource load of type stylesheet .*katex/i,/Failed to load stylesheet: .*katex/i,/Failed to connect to splunk server/i,/main: securitypolicyviolation/i,/handleRestrictedStateForResponse: callApi/i,/clientCookieHelpers: emptyCheckCookieConsent/i],t=["error","warn","info"];function n(t){return t.map(function(e){return e instanceof Error?e.message:String(e)}).join(" ")}function o(t){var o=n(t);return e.some(function(e){return e.test(o)})}for(var r=0;r<t.length;r++)!function(e){var t=console[e];console[e]=function(){if(!o([].slice.call(arguments)))return t.apply(this,arguments)}}(t[r]);window.addEventListener("error",function(e){var t=e.target,n=t&&(t.href||t.src||"");/\/katex\//i.test(n)&&(e.preventDefault(),e.stopImmediatePropagation())},!0),window.addEventListener("unhandledrejection",function(e){var t=e.reason instanceof Error?e.reason.message:String(e.reason||"");/Failed to load stylesheet: .*katex/i.test(t)&&e.preventDefault()})}();
+        </script>
+      
+        <script>
+!function(){"use strict";var S=[".notion.so",".notion.site"],A=["statsigapi.net","api.statsigcdn.com","featureassets.org","prodregistryv2.org","api2.amplitude.com","api.amplitude.com","cdn.amplitude.com","browser-intake-datadoghq.com","www.google-analytics.com","region1.google-analytics.com","analytics.google.com","api.segment.io","cdn.segment.com","cdn-settings.segment.com","static.ads-twitter.com","ads-twitter.com","px.ads.linkedin.com","snap.licdn.com","widget.intercom.io","api-iam.intercom.io","nexus-websocket-a.intercom.io","js.intercomcdn.com","api.sprig.com","sdk.sprig.com","http-inputs-notion.splunkcloud.com","o324374.ingest.sentry.io","ingest.sentry.io"],M='"use strict";(globalThis.webpackChunknotion_next=globalThis.webpackChunknotion_next||[]).push([[13326],{323052:(e,n,t)=>{t.r(n),t.d(n,{default:()=>o});function o(){}}}]);',B="data:text/javascript;charset=utf-8,"+encodeURIComponent(M);function N(h){for(var i=0;i<S.length;i++)if(h===S[i].slice(1)||h.endsWith(S[i]))return!0;return!1}function E(h){for(var i=0;i<A.length;i++)if(h===A[i]||h.endsWith("."+A[i]))return!0;return!1}function R(h){try{return /\/(_assets|assets)\/sentry-[^/]+\.js$/i.test(new URL(h,location.origin).pathname)}catch(i){return!1}}function T(){return JSON.stringify({feature_gates:{},dynamic_configs:{},layer_configs:{},has_updates:!1,time:Date.now()})}function C(u){try{var p=new URL(u,location.origin);return E(p.hostname)?{blocked:!0,url:p.toString()}:N(p.hostname)?{blocked:!1,url:location.origin+"/__notion/"+p.hostname+p.pathname+p.search}:{blocked:!1,url:u}}catch(e){return{blocked:!1,url:u}}}function F(u){if(typeof u==="string")return{target:u,kind:"string"};if(u instanceof Request)return{target:u.url,kind:"request"};if(u&&typeof u==="object"){if(typeof u.url==="string")return{target:u.url,kind:"requestLike"};if(typeof u.href==="string")return{target:u.href,kind:"urlLike"}}return null}function P(e,t){var n=Object.getOwnPropertyDescriptor(e,t);n&&n.set&&Object.defineProperty(e,t,{configurable:!0,enumerable:n.enumerable,get:n.get,set:function(e){if(t==="src"&&R(e))return n.set.call(this,B);var o=C(e);return n.set.call(this,o.url)}})}function H(e){if(e instanceof HTMLLinkElement&&e.href){var t=C(e.href);t.url!==e.href&&(e.href=t.url)}else if(e instanceof HTMLScriptElement&&e.src){if(R(e.src)){e.src=B;return}var n=C(e.src);n.url!==e.src&&(e.src=n.url)}}P(HTMLLinkElement.prototype,"href"),P(HTMLScriptElement.prototype,"src");var oA=Element.prototype.setAttribute;Element.prototype.setAttribute=function(e,t){if(this instanceof HTMLLinkElement&&e==="href"){var n=C(t);t=n.url}else if(this instanceof HTMLScriptElement&&e==="src"){if(R(t))t=B;else{var o=C(t);t=o.url}}return oA.call(this,e,t)};var oF=window.fetch;window.fetch=function(i,o){var r=F(i),e=r?C(r.target):null;if(e&&e.blocked)return Promise.resolve(new Response(T(),{status:200,headers:{"content-type":"application/json"}}));if(r&&e){if(r.kind==="string")i=e.url;else if(r.kind==="request"||r.kind==="requestLike")i=new Request(e.url,i);else if(r.kind==="urlLike")i=e.url}return oF.call(this,i,o)};var oX=XMLHttpRequest.prototype.open,oS=XMLHttpRequest.prototype.send;XMLHttpRequest.prototype.open=function(){if(arguments.length>=2&&typeof arguments[1]==="string"){var e=C(arguments[1]);this.__enpBlockedAnalytics=e.blocked,arguments[1]=e.url}return oX.apply(this,arguments)};XMLHttpRequest.prototype.send=function(e){if(this.__enpBlockedAnalytics){this.readyState=4,this.status=200,this.responseText=T(),this.response=this.responseText,this.onreadystatechange&&this.onreadystatechange(),this.onload&&this.onload();return}return oS.call(this,e)};if(navigator.sendBeacon){var oB=navigator.sendBeacon.bind(navigator);navigator.sendBeacon=function(u,d){var e=C(u);return e.blocked?!0:oB(e.url,d)}}var oP=Node.prototype.appendChild;Node.prototype.appendChild=function(e){return H(e),oP.call(this,e)};var oI=Node.prototype.insertBefore;Node.prototype.insertBefore=function(e,t){return H(e),oI.call(this,e,t)};document.querySelectorAll('link[href],script[src]').forEach(H)}();
+        </script>
+      
+        <script>
+!function(){"use strict";function n(e){try{return new URL(e,location.origin).hostname==="aif.notion.so"}catch(t){return!1}}function o(e){return e==null||e===""||e==="about:blank"}function r(e){if(!(e instanceof HTMLIFrameElement))return!1;var t=(e.getAttribute("sandbox")||"").split(/\s+/).filter(Boolean);return t.includes("allow-scripts")&&t.includes("allow-same-origin")&&o(e.getAttribute("src")||e.src||"")}function i(e){var t=(e||"").split(/\s+/).filter(Boolean);return t.includes("allow-scripts")&&t.includes("allow-same-origin")?t.filter(function(e){return e!=="allow-same-origin"}).join(" "):e}function a(e){if(!(e instanceof HTMLIFrameElement))return!1;var t=e.getAttribute("src")||e.src||"";if(n(t))return e.remove(),!0;if(r(e)){var o=i(e.getAttribute("sandbox")||"");o!==e.getAttribute("sandbox")&&s.call(e,"sandbox",o)}return!1}var s=Element.prototype.setAttribute;Element.prototype.setAttribute=function(e,t){if(this instanceof HTMLIFrameElement){if(e==="src"&&n(t))return;if(e==="sandbox"&&r(this))t=i(t)}return s.call(this,e,t)};var c=Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype,"src");c&&c.set&&Object.defineProperty(HTMLIFrameElement.prototype,"src",{configurable:!0,enumerable:c.enumerable,get:c.get,set:function(e){if(!n(e))return c.set.call(this,e)}});var p=Node.prototype.appendChild;Node.prototype.appendChild=function(e){if(a(e))return e;return p.call(this,e)};var d=Node.prototype.insertBefore;Node.prototype.insertBefore=function(e,t){if(a(e))return e;return d.call(this,e,t)};new MutationObserver(function(e){for(var t of e)for(var n of t.addedNodes)n&&n.nodeType===1&&(a(n),n.querySelectorAll&&n.querySelectorAll("iframe").forEach(a))}).observe(document.documentElement,{childList:!0,subtree:!0});document.querySelectorAll("iframe").forEach(a)}();
+        </script>
+      
+        <script>
+!function(){"use strict";!function(){function e(){var e={};return{setItem:function(t,o){e[t]=String(o)},getItem:function(t){return Object.prototype.hasOwnProperty.call(e,t)?e[t]:null},removeItem:function(t){delete e[t]},clear:function(){e={}},key:function(t){return Object.keys(e)[t]??null},get length(){return Object.keys(e).length}}}function t(t){var o=e();try{var r=globalThis[t];if(r&&"function"==typeof r.getItem){try{r.getItem("__enp_probe__");return}catch(e){}}}catch(e){}try{Object.defineProperty(globalThis,t,{configurable:!0,enumerable:!0,get:function(){return o},set:function(){}})}catch(e){try{delete globalThis[t],globalThis[t]=o}catch(e){}}}t("localStorage"),t("sessionStorage")}()}();
+        </script>
+      
+        <meta
+          http-equiv="Content-Security-Policy"
+          content="connect-src 'self' blob: data:;"
+        />
+      
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notion</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+        <link
+          rel="icon"
+          type="image/png"
+          href="data:image/png;base64,iVBORw0KGgo="
+        />
+
+        <style>
+          
+
+
+          
+          
+        .notion-topbar + div {
+          display: none !important;
+        }
+    
+        div.notion-topbar, div.notion-topbar-mobile {
+          display: none !important;
+        }
+      
+          
+          
+          
+          
+          
+          
+
+            
+                .layout.layout-wide {
+                  padding-bottom: 0px !important;
+                }
+              
+
+          .notion-frame {
+            height: 100% !important;
+          }
+
+          .toggle-checkbox {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+
+          .toggle-slot {
+            position: absolute;
+            right: 10px;
+            bottom: -75px;
+            height: 10em;
+            width: 20em;
+            border: 9px solid #e4e7ec;
+            border-radius: 10em;
+            background-color: transparent;
+
+            transition: background-color 250ms;
+          }
+
+          .toggle-mode {
+            transform: scale(0.15);
+            position: absolute;
+            right: 10px;
+          }
+
+          .toggle-button {
+            transform: translate(11.75em, 1.25em);
+            position: absolute;
+            height: 6.5em;
+            width: 6.5em;
+            border-radius: 50%;
+            background-color: #ffeccf;
+            box-shadow: inset 0px 0px 0px 0.75em #ffbb52;
+            transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+          }
+
+          .toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+            background-color: #485367;
+            box-shadow: inset 0px 0px 0px 0.75em white;
+            transform: translate(1.75em, 1.25em);
+          }
+
+          .sun-icon {
+            position: absolute;
+            height: 6em;
+            width: 6em;
+            color: #ffbb52;
+          }
+
+          .sun-icon-wrapper {
+            position: absolute;
+            height: 6em;
+            width: 6em;
+            opacity: 1;
+            transform: translate(2em, 1.5em) rotate(15deg);
+            transform-origin: 50% 50%;
+            transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+          }
+
+          .toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+            opacity: 0;
+            transform: translate(3em, 2em) rotate(0deg);
+          }
+
+          .notion-image-block div[role="button"], .notion-video-block div[role="button"] {
+            display: none !important;
+          }
+
+          .moon-icon {
+            position: absolute;
+            height: 6em;
+            width: 6em;
+            color: white;
+          }
+
+          .moon-icon-wrapper {
+            position: absolute;
+            height: 6em;
+            width: 6em;
+            opacity: 0;
+            transform: translate(11em, 1.5em) rotate(0deg);
+            transform-origin: 50% 50%;
+            transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+          }
+
+          .toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+            opacity: 1;
+            transform: translate(12em, 1.5em) rotate(-15deg);
+          }
+
+          .altTextBlockButton {
+            display: none !important;
+          }
+
+          .autolayout-row.autolayout-fill-width.autolayout-center.autolayout-space {
+            display: none !important;
+          }
+
+          .layout {
+            padding-bottom: 0px !important;
+          }
+
+          
+
+          
+
+          
+        </style>
+
+        <script>
+          if (window) {
+            if ("WebSocket" in window) {
+              window.WebSocket = {};
+            }
+          }
+
+          try {
+            localStorage.setItem("__console", "true"),
+              localStorage.setItem(
+                "theme",
+                '{"mode":"dark"}',
+              );
+          } catch (e) {}
+          try {
+            window.localStorage.setItem("__console", "true"),
+              window.localStorage.setItem(
+                "theme",
+                '{"mode":"dark"}',
+              );
+          } catch (e) {}
+        </script>
+      </head>
+<body>
+    <header>
+        <img src="https://thecloudbootcamp.com/wp-content/uploads/2024/07/Logo_TCB.svg" width="180" alt="The Cloud Bootcamp Logo">
+        <h1>DevOps Cloud Bootcamp</h1>
+        <h2>Pipeline CI/CD com Jenkins</h2>
+    </header>
+
+    <section class="status-section">
+        <h3>Status do Pipeline</h3>
+        <div id="build-status" class="card">Aguardando build...</div>
+        <button onclick="simulateBuild()">Simular Build</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 The Cloud Bootcamp</p>
+    </footer>
+
+    <script>
+        function simulateBuild() {
+            document.getElementById('build-status').textContent = '✅ Build realizado com sucesso!';
+        }
+    </script>
+<script>
+          let redirected = false;
+
+          
+function onDark() {
+  document.body.classList.add("dark");
+  __console && __console.environment && __console.environment.ThemeStore && __console.environment.ThemeStore.setState({ mode: "dark" });
+  localStorage.setItem("theme", '{"mode": "dark"}');
+}
+
+function onLight() {
+  document.body.classList.remove("dark");
+  __console && __console.environment && __console.environment.ThemeStore && __console.environment.ThemeStore.setState({ mode: "light" });
+  localStorage.setItem("theme",'{"mode": "dark"}');
+}
+
+function toggle(e) {
+  var checked = false;
+
+  if (e.matches != null) {
+    checked = e.matches;
+    var checkboxEl = document.querySelector(".toggle-checkbox");
+    if (checkboxEl) { checkboxEl.checked = checked };
+  } else {
+    checked = e.target.checked;
+  }
+
+  if (checked) {
+    onDark();
+  } else {
+    onLight();
+  }
+}
+
+function addDarkModeButton(device) {
+  // TODO fix dark mode toggle button
+  return;
+  const el = document.createElement("label");
+  const nav =
+    device === "web"
+      ? document.querySelector(".notion-topbar").firstChild
+      : document.querySelector(".notion-topbar-mobile");
+  el.className = "toggle-mode";
+  nav.appendChild(el);
+
+  el.innerHTML = '<input class="toggle-checkbox" type="checkbox"></input> <div class="toggle-slot"> <div class="sun-icon-wrapper"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="iconify sun-icon" data-icon="feather-sun" data-inline="false"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></g></svg> </div><div class="toggle-button"></div><div class="moon-icon-wrapper"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="iconify moon-icon" data-icon="feather-moon" data-inline="false"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1 1 11.21 3A7 7 0 0 0 21 12.79z"></path></svg></div></div>';
+
+  el.querySelector(".toggle-checkbox").addEventListener("change", toggle);
+
+  // enable smart dark mode based on user-preference
+  var checkboxEl = el.querySelector(".toggle-checkbox");
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    if (checkboxEl) { checkboxEl.checked = true };
+    onDark();
+  } else {
+    if (checkboxEl) { checkboxEl.checked = false };
+    onLight();
+  }
+
+  // try to detect if user-preference change
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", toggle);
+}
+;
+
+          function addDuplicateButton(device) {
+            if (!undefined) {
+              return;
+            }
+            const el = document.createElement("div");
+            const nav =
+              device === "web"
+                ? document.querySelector(".notion-topbar").firstChild
+                : document.querySelector(".notion-topbar-mobile");
+            const duplicateButton = nav.querySelector(
+              'div[role="button"]:has(svg.duplicate)',
+            );
+            duplicateButton.style.display = "inline-flex !important";
+            duplicateButton.style.pointerEvents = "all";
+            duplicateButton.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              window
+                .open(
+                  "https://www.notion.so/undefined?duplicate=true",
+                  "_blank",
+                )
+                .focus();
+            });
+          }
+
+          const observer = new MutationObserver(function () {
+            
+  var systemDarkMode = false;
+  
+  try {
+  __console && __console.environment && __console.environment.ThemeStore && __console.environment.ThemeStore.setState({
+    mode: systemDarkMode ? "dark" : "dark",
+  });
+  } catch (_err) {}
+;
+
+            if (redirected) return;
+            const nav = document.querySelector(".notion-topbar");
+            const mobileNav = document.querySelector(".notion-topbar-mobile");
+            if (
+              (nav && nav.firstChild && nav.firstChild.firstChild) ||
+              (mobileNav && mobileNav.firstChild)
+            ) {
+              redirected = true;
+              addDuplicateButton(nav ? "web" : "mobile");
+              // addDarkModeButton(nav ? "web" : "mobile");
+              const onpopstate = window.onpopstate;
+              window.onpopstate = function () {
+                onpopstate.apply(this, [].slice.call(arguments));
+              };
+            }
+          });
+          observer.observe(document.querySelector("#notion-app"), {
+            childList: true,
+            subtree: true,
+          });
+          const replaceState = window.history.replaceState;
+          window.history.replaceState = function (state) {
+            return replaceState.apply(window.history, arguments);
+          };
+        </script>
+         
+        <script>
+          var debounceTimer;
+          function findStringInNested(obj) {
+            if (typeof obj === "string") {
+              return obj;
+            } else if (Array.isArray(obj)) {
+              for (const element of obj) {
+                const result = findStringInNested(element);
+                if (result) return result;
+              }
+            } else if (typeof obj === "object" && obj !== null) {
+              for (const key in obj) {
+                const result = findStringInNested(obj[key]);
+                if (result) return result;
+              }
+            }
+            return null;
+          }
+
+          function getPageTitle() {
+            try {
+              var pageTitle = findStringInNested(
+                __console.debugging.getCurrentPageDetail().raw.properties.title,
+              );
+              if (pageTitle) {
+                return pageTitle.trim();
+              }
+            } catch (_e) {
+              return window.document.title;
+            }
+          }
+
+          var notifyParentOfUrlChange = function (url) {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function () {
+              window.parent.postMessage(
+                { type: "enp-url-change", url: url, title: getPageTitle() },
+                "*",
+              );
+            }, 50);
+          };
+
+          var contentChangeDelay = 2000;
+          var notifyParentOfContentChange = function () {
+            clearTimeout(debounceTimer);
+            debounceTimer = setTimeout(function () {
+              if (document.readyState === "complete") {
+                var primaryContentElement =
+                  document.querySelector(".notion-frame");
+
+                if (primaryContentElement == null) {
+                  return;
+                }
+
+                if (primaryContentElement.querySelector(".notion-shimmer")) {
+                  // Content is still loading, wait and retry
+                  setTimeout(notifyParentOfContentChange, contentChangeDelay);
+                  return;
+                }
+
+                var textContentPrimary = primaryContentElement.innerText;
+                // Remove "Drag image to reposition" from the beginning
+                textContentPrimary = textContentPrimary.replace(
+                  /^Drag image to reposition*/,
+                  "",
+                );
+
+                var textContentSecondary = "";
+                var secondaryContentElement = document.querySelector(
+                  ".notion-peek-renderer",
+                );
+
+                if (secondaryContentElement) {
+                  if (
+                    secondaryContentElement.querySelector(".notion-shimmer")
+                  ) {
+                    // Content is still loading, wait and retry
+                    setTimeout(notifyParentOfContentChange, contentChangeDelay);
+                    return;
+                  }
+
+                  textContentSecondary = secondaryContentElement.innerText;
+                  textContentSecondary = textContentSecondary.replace(
+                    /^Drag image to reposition*/,
+                    "",
+                  );
+                }
+
+                window.parent.postMessage(
+                  {
+                    type: "enp-content-change",
+                    textContentPrimary: textContentPrimary.trim(),
+                    textContentSecondary: textContentSecondary.trim(),
+                  },
+                  "*",
+                );
+              } else {
+                document.addEventListener("readystatechange", function () {
+                  if (document.readyState === "complete") {
+                    window.setTimeout(
+                      notifyParentOfContentChange,
+                      contentChangeDelay,
+                    );
+                  }
+                });
+              }
+            }, 100);
+          };
+
+          if (window.navigation) {
+            window.navigation.addEventListener("navigate", function (event) {
+              notifyParentOfUrlChange(event.destination.url);
+              window.setTimeout(
+                notifyParentOfContentChange,
+                contentChangeDelay,
+              );
+            });
+          } else {
+            // Override pushState and replaceState to detect URL changes
+            var originalPushState = history.pushState;
+            var originalReplaceState = history.replaceState;
+
+            history.pushState = function (state) {
+              originalPushState.apply(this, arguments);
+              notifyParentOfUrlChange(location.href);
+              window.setTimeout(
+                notifyParentOfContentChange,
+                contentChangeDelay,
+              );
+            };
+
+            history.replaceState = function (state) {
+              originalReplaceState.apply(this, arguments);
+              notifyParentOfUrlChange(location.href);
+              window.setTimeout(
+                notifyParentOfContentChange,
+                contentChangeDelay,
+              );
+            };
+
+            // Detect browser navigation changes
+            window.onpopstate = function (event) {
+              notifyParentOfUrlChange(location.href);
+              window.setTimeout(
+                notifyParentOfContentChange,
+                contentChangeDelay,
+              );
+            };
+          }
+        </script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"3b6c37cd19db4a41a46c86574028c818","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

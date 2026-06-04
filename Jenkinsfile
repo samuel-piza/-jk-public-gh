@@ -32,7 +32,10 @@ pipeline {
         stage('Deploy Application') {
             steps {
                 // Se o container antigo já existir rodando na máquina, pode ser necessário pará-lo antes
-                sh "docker run --rm -d -p 3000:3000 --name webapp_ctr samuelpiza/webapp:${BUILD_NUMBER}"
+                sh  '''
+                        docker stop webapp_ctr
+                        docker run --rm -d -p 3000:3000 --name webapp_ctr samuelpiza/webapp:${BUILD_NUMBER}
+                    '''
             }
         }
     } // Fecha as stages
